@@ -3,12 +3,14 @@ import Button from "@/components/ui/Button";
 export default function HeroSection() {
   return (
     <section className="relative bg-brand-black overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: "radial-gradient(circle at 25% 25%, #B91C1C 1px, transparent 1px), radial-gradient(circle at 75% 75%, #D97706 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }} />
+      {/* Background image with dark overlay */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&q=80"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/70" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">

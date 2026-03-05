@@ -57,6 +57,13 @@ export default async function NewsArticlePage({
                 By {article.author}
               </span>
             </div>
+            {article.imageUrl && (
+              <img
+                src={article.imageUrl}
+                alt={article.title}
+                className="w-full h-64 md:h-80 object-cover rounded-xl mb-8"
+              />
+            )}
             <div className="prose prose-lg max-w-none text-brand-charcoal">
               {article.content.split("\n\n").map((para, i) => (
                 <p key={i} className="leading-relaxed mb-4">

@@ -16,7 +16,7 @@ export default function CTASection() {
             href="/locations"
             variant="outline"
             size="lg"
-            className="border-white text-white hover:bg-white hover:text-brand-red"
+            className="border-white text-white hover:bg-brand-black hover:text-white hover:border-brand-black"
           >
             Find a Location
           </Button>

@@ -8,9 +8,17 @@ export default function NewsCard({ article }: { article: NewsArticle }) {
   return (
     <Link href={`/news/${article.slug}`}>
       <Card className="h-full hover:shadow-lg transition-shadow">
-        <div className="h-40 bg-gradient-to-br from-brand-charcoal to-brand-black flex items-center justify-center">
-          <span className="text-4xl font-bold text-white/10">NEWS</span>
-        </div>
+        {article.imageUrl ? (
+          <img
+            src={article.imageUrl}
+            alt={article.title}
+            className="h-48 w-full object-cover"
+          />
+        ) : (
+          <div className="h-48 bg-gradient-to-br from-brand-charcoal to-brand-black flex items-center justify-center">
+            <span className="text-4xl font-bold text-white/10">NEWS</span>
+          </div>
+        )}
         <div className="p-5">
           <div className="flex items-center gap-2 mb-2">
             <Badge label={article.category} />
