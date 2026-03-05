@@ -1,0 +1,50 @@
+[
+  {
+    "id": "china-star-buffet",
+    "slug": "china-star-buffet",
+    "name": "China Star Buffet",
+    "tagline": "Authentic All-You-Can-Eat Chinese Buffet",
+    "description": "China Star Buffet is our flagship brand, bringing authentic Chinese cuisine to families and food lovers across America. With over 100 items on our daily buffet, we serve everything from classic General Tso's Chicken and Beef & Broccoli to fresh sushi rolls and Mongolian BBQ. Every dish is prepared daily using traditional recipes and the freshest ingredients.\n\nSince 1998, China Star Buffet has grown from a single location to the largest mall-based Chinese buffet chain in the United States. Our commitment to quality, variety, and value has earned us a loyal following in communities from coast to coast.",
+    "shortDescription": "Our flagship all-you-can-eat Chinese buffet with 100+ daily items including sushi and Mongolian BBQ.",
+    "imageUrl": "/images/brands/china-star-buffet.jpg",
+    "cuisineType": "Chinese Buffet",
+    "features": ["All-You-Can-Eat", "Fresh Sushi Bar", "Mongolian BBQ", "100+ Daily Items"],
+    "established": 1998
+  },
+  {
+    "id": "jade-wok",
+    "slug": "jade-wok",
+    "name": "Jade Wok",
+    "tagline": "Fresh Pan-Asian Wok Cuisine",
+    "description": "Jade Wok brings the vibrant flavors of Pan-Asian wok cooking to your local mall food court. Our chefs prepare each dish to order using high-heat wok techniques that lock in flavor and freshness. Choose from a variety of proteins, vegetables, sauces, and noodle or rice bases to create your perfect meal.\n\nWith a focus on speed, freshness, and customization, Jade Wok offers a quick-service dining experience that doesn't compromise on quality. Perfect for a fast lunch or a flavorful dinner.",
+    "shortDescription": "Made-to-order Pan-Asian wok dishes with customizable proteins, sauces, and bases.",
+    "imageUrl": "/images/brands/jade-wok.jpg",
+    "cuisineType": "Pan-Asian Wok",
+    "features": ["Made-to-Order", "Customizable Bowls", "Fresh Ingredients", "Quick Service"],
+    "established": 2012
+  },
+  {
+    "id": "lucky-bowl",
+    "slug": "lucky-bowl",
+    "name": "Lucky Bowl Express",
+    "tagline": "Quick & Delicious Chinese Favorites",
+    "description": "Lucky Bowl Express is our fast-casual concept delivering beloved Chinese American favorites at an unbeatable value. From our signature Orange Chicken to savory Lo Mein and Fried Rice combos, every meal is hearty, flavorful, and ready in minutes.\n\nDesigned for busy shoppers and families on the go, Lucky Bowl Express is the perfect stop for a satisfying meal that won't slow you down. Generous portions, bold flavors, and friendly service — that's the Lucky Bowl promise.",
+    "shortDescription": "Fast-casual Chinese American favorites with generous portions at great value.",
+    "imageUrl": "/images/brands/lucky-bowl.jpg",
+    "cuisineType": "Chinese American Fast-Casual",
+    "features": ["Combo Meals", "Generous Portions", "Quick Service", "Family-Friendly Value"],
+    "established": 2016
+  },
+  {
+    "id": "golden-dragon",
+    "slug": "golden-dragon",
+    "name": "Golden Dragon Grill",
+    "tagline": "Premium Asian Grill & Hibachi",
+    "description": "Golden Dragon Grill elevates the mall dining experience with premium hibachi-style grilling and upscale Asian cuisine. Watch as our skilled chefs prepare your meal on the open grill, combining theatrical flair with authentic flavor. Our menu features premium cuts, fresh seafood, and specialty sauces.\n\nGolden Dragon Grill is our newest concept, designed to appeal to diners looking for a step above the traditional food court experience. With a modern ambiance and chef-driven menu, it's destination dining right inside the mall.",
+    "shortDescription": "Premium hibachi-style Asian grill with chef-prepared meals and upscale presentation.",
+    "imageUrl": "/images/brands/golden-dragon.jpg",
+    "cuisineType": "Asian Grill & Hibachi",
+    "features": ["Hibachi Grill", "Premium Ingredients", "Chef-Prepared", "Modern Ambiance"],
+    "established": 2020
+  }
+]

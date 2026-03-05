@@ -1,0 +1,102 @@
+{
+  "brandId": "china-star-buffet",
+  "lastUpdated": "2026-01-15",
+  "categories": [
+    {
+      "id": "appetizers",
+      "name": "Appetizers",
+      "description": "Start your meal with our selection of freshly prepared appetizers.",
+      "items": [
+        { "id": "spring-rolls", "name": "Vegetable Spring Rolls (4 pc)", "description": "Crispy rolls filled with cabbage, carrots, and glass noodles.", "price": 6.99, "tags": ["vegetarian"], "isAvailable": true },
+        { "id": "crab-rangoon", "name": "Crab Rangoon (6 pc)", "description": "Cream cheese and crab meat in crispy wonton wrappers.", "price": 7.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "egg-rolls", "name": "Pork Egg Rolls (2 pc)", "description": "Classic egg rolls with seasoned pork and vegetables.", "price": 5.99, "tags": [], "isAvailable": true },
+        { "id": "pot-stickers", "name": "Pot Stickers (8 pc)", "description": "Pan-fried dumplings filled with pork and vegetables, served with dipping sauce.", "price": 8.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "edamame", "name": "Steamed Edamame", "description": "Lightly salted steamed soybeans.", "price": 5.49, "tags": ["vegetarian", "gluten-free"], "isAvailable": true },
+        { "id": "hot-sour-soup", "name": "Hot & Sour Soup", "description": "Classic Chinese soup with tofu, mushrooms, bamboo shoots, and egg.", "price": 4.99, "tags": ["spicy"], "isAvailable": true },
+        { "id": "wonton-soup", "name": "Wonton Soup", "description": "Savory broth with pork and shrimp wontons.", "price": 4.99, "tags": [], "isAvailable": true }
+      ]
+    },
+    {
+      "id": "chicken",
+      "name": "Chicken Entrees",
+      "description": "Our most popular chicken dishes, wok-tossed to perfection.",
+      "items": [
+        { "id": "general-tso", "name": "General Tso's Chicken", "description": "Crispy chicken tossed in sweet and spicy sauce with steamed broccoli.", "price": 13.99, "tags": ["spicy", "popular"], "isAvailable": true },
+        { "id": "orange-chicken", "name": "Orange Chicken", "description": "Crispy chicken glazed in tangy orange sauce.", "price": 13.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "kung-pao", "name": "Kung Pao Chicken", "description": "Diced chicken stir-fried with peanuts, peppers, and zucchini in a savory sauce.", "price": 13.49, "tags": ["spicy"], "isAvailable": true },
+        { "id": "sesame-chicken", "name": "Sesame Chicken", "description": "Crispy chicken tossed in sweet sesame glaze, topped with sesame seeds.", "price": 13.49, "tags": [], "isAvailable": true },
+        { "id": "cashew-chicken", "name": "Cashew Chicken", "description": "Chicken stir-fried with cashews, bell peppers, and onions.", "price": 13.99, "tags": [], "isAvailable": true },
+        { "id": "chicken-broccoli", "name": "Chicken with Broccoli", "description": "Tender chicken and fresh broccoli in a light garlic sauce.", "price": 12.99, "tags": [], "isAvailable": true }
+      ]
+    },
+    {
+      "id": "beef",
+      "name": "Beef Entrees",
+      "items": [
+        { "id": "beef-broccoli", "name": "Beef & Broccoli", "description": "Sliced beef and broccoli florets in savory brown sauce.", "price": 14.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "mongolian-beef", "name": "Mongolian Beef", "description": "Tender beef with scallions and onions in a sweet soy glaze.", "price": 14.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "pepper-steak", "name": "Pepper Steak", "description": "Sliced beef stir-fried with bell peppers and onions.", "price": 14.49, "tags": [], "isAvailable": true },
+        { "id": "szechuan-beef", "name": "Szechuan Beef", "description": "Spicy stir-fried beef with dried chili peppers and Szechuan peppercorns.", "price": 14.99, "tags": ["spicy"], "isAvailable": true },
+        { "id": "beef-mushroom", "name": "Beef with Mushrooms", "description": "Tender beef with fresh mushrooms in oyster sauce.", "price": 14.49, "tags": [], "isAvailable": true }
+      ]
+    },
+    {
+      "id": "seafood",
+      "name": "Seafood Entrees",
+      "items": [
+        { "id": "shrimp-lobster", "name": "Shrimp in Lobster Sauce", "description": "Jumbo shrimp in a creamy egg and garlic lobster sauce.", "price": 15.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "kung-pao-shrimp", "name": "Kung Pao Shrimp", "description": "Shrimp stir-fried with peanuts, peppers, and chili sauce.", "price": 15.99, "tags": ["spicy"], "isAvailable": true },
+        { "id": "sweet-sour-shrimp", "name": "Sweet & Sour Shrimp", "description": "Battered shrimp with pineapple and bell peppers in sweet and sour sauce.", "price": 14.99, "tags": [], "isAvailable": true },
+        { "id": "garlic-shrimp", "name": "Garlic Shrimp", "description": "Jumbo shrimp sautéed in fragrant garlic butter sauce.", "price": 15.99, "tags": [], "isAvailable": true },
+        { "id": "fish-filet", "name": "Crispy Fish Filet", "description": "Lightly battered fish filet with sweet chili glaze.", "price": 13.99, "tags": [], "isAvailable": true }
+      ]
+    },
+    {
+      "id": "vegetarian",
+      "name": "Vegetarian Entrees",
+      "description": "Fresh, flavorful dishes made entirely with vegetables and tofu.",
+      "items": [
+        { "id": "mapo-tofu", "name": "Mapo Tofu", "description": "Soft tofu in a bold, spicy chili bean sauce.", "price": 11.99, "tags": ["vegetarian", "spicy"], "isAvailable": true },
+        { "id": "buddha-delight", "name": "Buddha's Delight", "description": "Mixed vegetables and tofu stir-fried in a light garlic sauce.", "price": 11.49, "tags": ["vegetarian", "gluten-free"], "isAvailable": true },
+        { "id": "eggplant-garlic", "name": "Eggplant in Garlic Sauce", "description": "Tender eggplant braised in a savory garlic chili sauce.", "price": 11.99, "tags": ["vegetarian", "spicy"], "isAvailable": true },
+        { "id": "veggie-lo-mein", "name": "Vegetable Lo Mein", "description": "Soft noodles stir-fried with mixed vegetables in savory sauce.", "price": 10.99, "tags": ["vegetarian"], "isAvailable": true }
+      ]
+    },
+    {
+      "id": "sushi",
+      "name": "Sushi Bar",
+      "description": "Fresh sushi rolls prepared daily at our in-house sushi bar.",
+      "items": [
+        { "id": "california-roll", "name": "California Roll (8 pc)", "description": "Crab, avocado, and cucumber with tobiko.", "price": 8.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "spicy-tuna", "name": "Spicy Tuna Roll (8 pc)", "description": "Fresh tuna with spicy mayo and cucumber.", "price": 10.99, "tags": ["spicy"], "isAvailable": true },
+        { "id": "salmon-roll", "name": "Salmon Avocado Roll (8 pc)", "description": "Fresh salmon and avocado with sesame seeds.", "price": 10.99, "tags": [], "isAvailable": true },
+        { "id": "shrimp-tempura-roll", "name": "Shrimp Tempura Roll (8 pc)", "description": "Crispy shrimp tempura with avocado and eel sauce.", "price": 11.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "veggie-roll", "name": "Vegetable Roll (8 pc)", "description": "Avocado, cucumber, asparagus, and carrot.", "price": 7.99, "tags": ["vegetarian"], "isAvailable": true },
+        { "id": "dragon-roll", "name": "Dragon Roll (8 pc)", "description": "Shrimp tempura inside, topped with eel, avocado, and eel sauce.", "price": 14.99, "tags": ["popular"], "isAvailable": true }
+      ]
+    },
+    {
+      "id": "rice-noodles",
+      "name": "Rice & Noodles",
+      "items": [
+        { "id": "fried-rice", "name": "Chicken Fried Rice", "description": "Wok-fried rice with chicken, egg, peas, and carrots.", "price": 10.99, "tags": ["popular"], "isAvailable": true },
+        { "id": "shrimp-fried-rice", "name": "Shrimp Fried Rice", "description": "Wok-fried rice with jumbo shrimp, egg, and vegetables.", "price": 12.99, "tags": [], "isAvailable": true },
+        { "id": "lo-mein", "name": "Chicken Lo Mein", "description": "Soft egg noodles stir-fried with chicken and mixed vegetables.", "price": 11.99, "tags": [], "isAvailable": true },
+        { "id": "chow-fun", "name": "Beef Chow Fun", "description": "Wide rice noodles stir-fried with beef, bean sprouts, and scallions.", "price": 12.99, "tags": [], "isAvailable": true },
+        { "id": "singapore-noodles", "name": "Singapore Rice Noodles", "description": "Thin rice noodles with shrimp, pork, and curry spices.", "price": 12.99, "tags": ["spicy"], "isAvailable": true },
+        { "id": "steamed-rice", "name": "Steamed White Rice", "description": "Fluffy steamed jasmine rice.", "price": 2.99, "tags": ["vegetarian", "gluten-free"], "isAvailable": true }
+      ]
+    },
+    {
+      "id": "desserts",
+      "name": "Desserts & Beverages",
+      "items": [
+        { "id": "sesame-balls", "name": "Sesame Balls (4 pc)", "description": "Crispy glutinous rice balls with sweet red bean filling.", "price": 5.99, "tags": ["vegetarian"], "isAvailable": true },
+        { "id": "fried-banana", "name": "Fried Banana", "description": "Banana fritters drizzled with honey.", "price": 5.49, "tags": ["vegetarian"], "isAvailable": true },
+        { "id": "mango-pudding", "name": "Mango Pudding", "description": "Creamy chilled mango pudding.", "price": 4.99, "tags": ["vegetarian", "gluten-free"], "isAvailable": true },
+        { "id": "green-tea", "name": "Hot Green Tea", "description": "Traditional brewed Chinese green tea.", "price": 2.49, "tags": ["vegetarian"], "isAvailable": true },
+        { "id": "soft-drink", "name": "Soft Drinks", "description": "Coca-Cola, Sprite, Diet Coke, or Dr. Pepper.", "price": 2.99, "tags": [], "isAvailable": true }
+      ]
+    }
+  ]
+}
