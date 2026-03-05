@@ -31,9 +31,12 @@ export default function HeroSection() {
             <Button href="/locations" size="lg">
               Find a Location &amp; Order
             </Button>
-            <Button href="/brands" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-brand-black">
+            <a
+              href="/brands"
+              className="inline-flex items-center justify-center rounded-lg font-semibold px-8 py-4 text-lg border-2 border-white text-white hover:bg-brand-black hover:border-brand-black transition-colors"
+            >
               Explore Our Brands
-            </Button>
+            </a>
           </div>
         </div>
       </div>

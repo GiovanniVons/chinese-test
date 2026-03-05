@@ -12,14 +12,12 @@ export default function CTASection() {
           or visit us in person at a mall near you.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
+          <a
             href="/locations"
-            variant="outline"
-            size="lg"
-            className="border-white text-white hover:bg-brand-black hover:text-white hover:border-brand-black"
+            className="inline-flex items-center justify-center rounded-lg font-semibold px-8 py-4 text-lg border-2 border-white text-white hover:bg-brand-black hover:border-brand-black transition-colors"
           >
             Find a Location
-          </Button>
+          </a>
           <Button
             href="/careers"
             variant="ghost"
