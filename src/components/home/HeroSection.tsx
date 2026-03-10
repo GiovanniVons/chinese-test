@@ -58,8 +58,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0 hero-bg origin-center">
         {/* Using a rich, textured or moody food/restaurant image */}
         <img
-          src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=2000&q=80"
-          alt="Luxury Dining Atmosphere"
+          src="/images/home-hero.jpg"
+          alt="Modern Oriental Luxury Dining Room"
           className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent" />
