@@ -16,21 +16,26 @@ export default function NewsPage() {
   const articles = getNews();
 
   return (
-    <>
+    <div className="bg-brand-black min-h-screen text-brand-light">
       <PageHeader
         title="News & Press"
         subtitle="The latest updates, milestones, and press releases from China Star Group."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "News" }]}
       />
-      <section className="py-12 md:py-16 bg-white">
+
+      <section className="py-20 md:py-32 relative z-10">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map((article) => (
-              <NewsCard key={article.id} article={article} />
-            ))}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-x-12 md:gap-y-16">
+              {articles.map((article, index) => (
+                <div key={article.id} className={index % 3 === 1 ? "md:mt-12" : ""}>
+                  <NewsCard article={article} />
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

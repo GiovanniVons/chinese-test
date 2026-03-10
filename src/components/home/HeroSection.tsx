@@ -1,44 +1,115 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import Button from "@/components/ui/Button";
 
+gsap.registerPlugin(useGSAP);
+
 export default function HeroSection() {
+  const container = useRef<HTMLElement>(null);
+  const textContainer = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      // Image subtle scale in
+      tl.from(".hero-bg", {
+        scale: 1.05,
+        duration: 2,
+        opacity: 0,
+        ease: "power2.inOut",
+      });
+
+      // Stagger text reveal
+      tl.from(
+        ".reveal-text",
+        {
+          y: 50,
+          opacity: 0,
+          duration: 1.2,
+          stagger: 0.15,
+        },
+        "-=1"
+      );
+
+      // Button fade in
+      tl.from(
+        ".hero-btns",
+        {
+          y: 20,
+          opacity: 0,
+          duration: 1,
+        },
+        "-=0.6"
+      );
+    },
+    { scope: container }
+  );
+
   return (
-    <section className="relative bg-brand-black overflow-hidden">
-      {/* Background image with dark overlay */}
-      <div className="absolute inset-0">
+    <section
+      ref={container}
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-black pt-20"
+    >
+      {/* Background Layer with Dark Gradient Overlay */}
+      <div className="absolute inset-0 z-0 hero-bg origin-center">
+        {/* Using a rich, textured or moody food/restaurant image */}
         <img
-          src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=1920&q=80"
-          alt=""
-          className="w-full h-full object-cover"
+          src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=2000&q=80"
+          alt="Luxury Dining Atmosphere"
+          className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-black/90 via-brand-black/40 to-transparent" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
-        <div className="max-w-3xl">
-          <p className="text-brand-gold font-semibold text-sm uppercase tracking-widest mb-4">
-            America&apos;s Premier Chinese Dining Group
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-            Authentic Flavors,{" "}
-            <span className="text-brand-red">60+ Locations</span> Nationwide
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-24">
+        <div ref={textContainer} className="max-w-4xl">
+          {/* Eyebrow */}
+          <div className="overflow-hidden mb-6">
+            <p className="reveal-text text-brand-gold font-montserrat tracking-[0.2em] text-xs md:text-sm uppercase flex items-center gap-4">
+              <span className="w-12 h-[1px] bg-brand-gold block"></span>
+              Elevated Chinese Dining
+            </p>
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="font-cormorant text-5xl md:text-7xl lg:text-8xl font-medium text-brand-light leading-[1.1] tracking-tight">
+            <div className="overflow-hidden pb-2">
+              <span className="reveal-text block">A Symphony of</span>
+            </div>
+            <div className="overflow-hidden pb-2">
+              <span className="reveal-text block text-brand-gold italic pr-4">Authentic Flavors</span>
+            </div>
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
-            From our signature all-you-can-eat buffets to premium Asian grill concepts,
-            China Star Group brings the best of Chinese and Pan-Asian cuisine to malls
-            across America.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button href="/locations" size="lg">
-              Find a Location &amp; Order
+
+          {/* Subtext */}
+          <div className="overflow-hidden mt-8 max-w-xl">
+            <p className="reveal-text text-brand-gray text-lg md:text-xl font-light leading-relaxed">
+              Experience the pinnacle of culinary artistry. With over 60 locations nationwide,
+              China Star Group curates timeless traditions in a modern ambiance.
+            </p>
+          </div>
+
+          {/* CTAs */}
+          <div className="hero-btns mt-12 flex flex-col sm:flex-row items-center gap-6">
+            <Button href="/locations" variant="primary" size="lg" className="w-full sm:w-auto px-10 rounded-none tracking-widest text-sm uppercase">
+              Reserve a Table
             </Button>
-            <a
-              href="/brands"
-              className="inline-flex items-center justify-center rounded-lg font-semibold px-8 py-4 text-lg border-2 border-white text-white hover:bg-brand-black hover:border-brand-black transition-colors"
-            >
-              Explore Our Brands
-            </a>
+            <Button href="/brands" variant="outline" size="lg" className="w-full sm:w-auto px-10 rounded-none tracking-widest text-sm uppercase">
+              Explore Collections
+            </Button>
           </div>
         </div>
+      </div>
+
+      {/* Elegant scroll indicator */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50 hero-btns">
+        <span className="text-[10px] uppercase tracking-widest text-brand-light font-montserrat">Scroll</span>
+        <div className="w-[1px] h-12 bg-gradient-to-b from-brand-gold to-transparent" />
       </div>
     </section>
   );

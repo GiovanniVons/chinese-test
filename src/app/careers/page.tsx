@@ -15,24 +15,24 @@ export const metadata: Metadata = createMetadata({
 
 const categories = [
   {
-    icon: "🍳",
-    title: "Kitchen",
-    description: "Cooks, prep staff, and sushi chefs",
+    icon: "Culinary",
+    title: "The Heart of the House",
+    description: "Executive Chefs, Wok Artisans, and Prep Specialists",
   },
   {
-    icon: "🤝",
+    icon: "Service",
     title: "Front of House",
-    description: "Cashiers, servers, and buffet attendants",
+    description: "Maitres D', Sommelier, Servers, and Hosts",
   },
   {
-    icon: "📋",
+    icon: "Leadership",
     title: "Management",
-    description: "Shift, restaurant, and district managers",
+    description: "General Managers and Multi-Unit Directors",
   },
   {
-    icon: "🏢",
-    title: "Corporate",
-    description: "Marketing, HR, IT, and operations",
+    icon: "Corporate",
+    title: "Corporate Team",
+    description: "Strategy, Marketing, Operations, and Finance",
   },
 ];
 
@@ -46,27 +46,35 @@ export default function CareersPage() {
   }, {});
 
   return (
-    <>
+    <div className="bg-brand-black min-h-screen text-brand-light">
       <PageHeader
-        title="Join Our Team"
-        subtitle="Build your career with one of America's largest mall-based restaurant groups. We're hiring across all locations."
+        title="Careers"
+        subtitle="Build your legacy with one of the nation's premier hospitality groups. Excellence starts here."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Careers" }]}
       />
 
       {/* Categories overview */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-20 md:py-32 bg-brand-charcoal relative z-10 border-b border-brand-gray/10">
         <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-medium text-brand-light mb-4">
+              Our <span className="italic text-brand-gold">Departments</span>
+            </h2>
+            <div className="w-16 h-px bg-brand-gold/50 mx-auto" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((cat) => (
               <div
                 key={cat.title}
-                className="text-center p-6 bg-brand-light rounded-xl"
+                className="text-center p-8 bg-brand-black border border-brand-gray/10 group hover:border-brand-gold/30 transition-all duration-500"
               >
-                <div className="text-3xl mb-2">{cat.icon}</div>
-                <h3 className="font-bold text-brand-black text-sm">
+                <div className="font-montserrat text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
+                  {cat.icon}
+                </div>
+                <h3 className="text-2xl font-cormorant font-medium text-brand-light mb-3">
                   {cat.title}
                 </h3>
-                <p className="text-xs text-brand-gray mt-1">
+                <p className="text-sm font-light leading-relaxed text-brand-gray">
                   {cat.description}
                 </p>
               </div>
@@ -76,43 +84,52 @@ export default function CareersPage() {
       </section>
 
       {/* Job listings */}
-      <section className="py-12 md:py-16 bg-brand-light">
+      <section className="py-20 md:py-32 bg-brand-black relative">
         <Container>
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-black mb-8">
-            Open Positions
-          </h2>
-          <div className="space-y-8">
-            {Object.entries(grouped).map(([category, categoryJobs]) => (
-              <div key={category}>
-                <h3 className="text-lg font-bold text-brand-black mb-4">
-                  {category}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {categoryJobs.map((job) => (
-                    <JobCard key={job.id} job={job} />
-                  ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-cormorant font-medium text-brand-light mb-4">
+                Open <span className="italic text-brand-gray">Positions</span>
+              </h2>
+            </div>
+
+            <div className="space-y-16">
+              {Object.entries(grouped).map(([category, categoryJobs]) => (
+                <div key={category} className="border-t border-brand-gray/10 pt-8">
+                  <h3 className="text-lg font-montserrat uppercase tracking-[0.2em] text-brand-gold mb-8">
+                    {category}
+                  </h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    {categoryJobs.map((job) => (
+                      <JobCard key={job.id} job={job} />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </Container>
       </section>
 
       {/* Application form */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-20 md:py-32 bg-brand-charcoal border-t border-brand-gray/10">
         <Container>
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-brand-black mb-2">
-              Apply Now
-            </h2>
-            <p className="text-brand-gray mb-8">
-              Interested in joining our team? Submit your information below and
-              we&apos;ll be in touch.
-            </p>
+            <div className="text-center mb-12">
+              <p className="font-montserrat text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-4">
+                Inquire
+              </p>
+              <h2 className="text-4xl md:text-5xl font-cormorant font-medium text-brand-light mb-6">
+                Submit <span className="italic text-brand-gray">Application</span>
+              </h2>
+              <p className="text-brand-gray font-light">
+                To be considered for future opportunities, please provide your details below. Our talent acquisition team will review your profile.
+              </p>
+            </div>
             <ApplicationForm />
           </div>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

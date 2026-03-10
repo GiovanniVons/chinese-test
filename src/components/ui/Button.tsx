@@ -3,13 +3,13 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-brand-red text-white hover:bg-brand-red-dark focus-visible:ring-brand-red",
+    "bg-brand-red text-brand-light hover:bg-brand-red-dark border border-brand-red hover:border-brand-red-dark focus-visible:ring-brand-gold",
   secondary:
-    "bg-brand-gold text-white hover:bg-amber-700 focus-visible:ring-brand-gold",
+    "bg-brand-black text-brand-gold border border-brand-gold hover:bg-brand-gold hover:text-brand-black focus-visible:ring-brand-gold",
   outline:
-    "border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white focus-visible:ring-brand-red",
+    "border border-brand-light text-brand-light hover:bg-brand-light hover:text-brand-black focus-visible:ring-brand-light",
   ghost:
-    "text-brand-gray hover:bg-gray-100 focus-visible:ring-gray-300",
+    "text-brand-gray hover:text-brand-light focus-visible:ring-brand-light",
 };
 
 const sizes = {

@@ -6,8 +6,8 @@ import type { Location } from "@/lib/types";
 const LocationMapInner = dynamic(() => import("./LocationMapInner"), {
   ssr: false,
   loading: () => (
-    <div className="h-full w-full rounded-xl bg-gray-200 animate-pulse flex items-center justify-center">
-      <p className="text-brand-gray text-sm">Loading map...</p>
+    <div className="h-full w-full bg-brand-charcoal animate-pulse flex items-center justify-center border border-brand-gray/20">
+      <p className="font-montserrat text-[10px] uppercase tracking-widest text-brand-gold">Initializing Map...</p>
     </div>
   ),
 });
@@ -18,7 +18,7 @@ export default function LocationMap({
   locations: Location[];
 }) {
   return (
-    <div className="h-[400px] md:h-[500px] w-full">
+    <div className="h-[400px] md:h-[600px] w-full border border-brand-gray/20 shadow-2xl relative z-0">
       <LocationMapInner locations={locations} />
     </div>
   );

@@ -4,7 +4,6 @@ import { createMetadata } from "@/lib/metadata";
 import { getLocations, getLocationById, getBrandById } from "@/lib/data";
 import PageHeader from "@/components/layout/PageHeader";
 import Container from "@/components/ui/Container";
-import OrderButtons from "@/components/locations/OrderButtons";
 import Button from "@/components/ui/Button";
 
 export function generateStaticParams() {
@@ -74,51 +73,56 @@ export default async function LocationDetailPage({
   };
 
   return (
-    <>
+    <div className="bg-brand-black min-h-screen text-brand-light">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
       <PageHeader
         title={location.mall}
         subtitle={`${location.name} &middot; ${location.city}, ${location.state}`}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Locations", href: "/locations" },
+          { label: "Reservations", href: "/locations" },
           { label: location.mall },
         ]}
       />
 
-      <section className="py-8 md:py-16 bg-white">
+      <section className="py-16 md:py-24 relative z-10">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto">
+
             {/* Main info */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-7 space-y-12">
+
               {/* Address */}
               <div>
-                <h2 className="text-xl font-bold text-brand-black mb-3">
-                  Location Details
+                <h2 className="text-3xl font-cormorant font-medium text-brand-light mb-6">
+                  Location <span className="italic text-brand-gold">Details</span>
                 </h2>
-                <div className="bg-brand-light rounded-xl p-6 space-y-3">
+                <div className="bg-brand-charcoal border border-brand-gray/20 p-8 md:p-10 space-y-8 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-bl-full transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700" />
+
                   <div>
-                    <p className="text-sm font-medium text-brand-gray">Brand</p>
-                    <p className="text-brand-black font-semibold">
+                    <p className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-brand-gold mb-2">Collection</p>
+                    <p className="text-brand-light font-cormorant text-2xl">
                       {brand?.name || location.name}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-brand-gray">Address</p>
-                    <p className="text-brand-black">
+                    <p className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-brand-gold mb-2">Address</p>
+                    <p className="text-brand-gray font-light text-lg leading-relaxed">
                       {location.address}
                       <br />
                       {location.city}, {location.state} {location.zip}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-brand-gray">Phone</p>
+                    <p className="font-montserrat text-[10px] uppercase tracking-[0.2em] text-brand-gold mb-2">Direct Line</p>
                     <a
                       href={`tel:${location.phone.replace(/\D/g, "")}`}
-                      className="text-brand-red hover:underline"
+                      className="text-brand-light hover:text-brand-gold transition-colors font-light text-lg"
                     >
                       {location.phone}
                     </a>
@@ -128,18 +132,18 @@ export default async function LocationDetailPage({
 
               {/* Hours */}
               <div>
-                <h2 className="text-xl font-bold text-brand-black mb-3">
-                  Hours of Operation
+                <h2 className="text-3xl font-cormorant font-medium text-brand-light mb-6">
+                  Hours of <span className="italic text-brand-gold">Operation</span>
                 </h2>
-                <div className="bg-brand-light rounded-xl p-6">
-                  <table className="w-full text-sm">
+                <div className="bg-brand-charcoal border border-brand-gray/20 p-8 md:p-10">
+                  <table className="w-full text-base font-light">
                     <tbody>
                       {hoursEntries.map((entry) => (
-                        <tr key={entry.day} className="border-b border-gray-200 last:border-0">
-                          <td className="py-2 font-medium text-brand-black">
+                        <tr key={entry.day} className="border-b border-brand-gray/10 last:border-0 group hover:bg-white/5 transition-colors">
+                          <td className="py-4 px-4 font-montserrat text-sm tracking-wide text-brand-light">
                             {entry.day}
                           </td>
-                          <td className="py-2 text-brand-gray text-right">
+                          <td className="py-4 px-4 text-brand-gray text-right group-hover:text-brand-gold transition-colors">
                             {entry.hours}
                           </td>
                         </tr>
@@ -151,47 +155,55 @@ export default async function LocationDetailPage({
             </div>
 
             {/* Sidebar - Order */}
-            <div>
-              <div className="sticky top-24 bg-brand-light rounded-xl p-6 space-y-4">
-                <h2 className="text-xl font-bold text-brand-black">
-                  Order Online
-                </h2>
-                <p className="text-sm text-brand-gray">
-                  Order delivery from {location.name} at {location.mall} through
-                  our delivery partners.
-                </p>
-                <div className="space-y-3">
+            <div className="lg:col-span-5 relative">
+              <div className="sticky top-32 bg-brand-charcoal border border-brand-gold/30 p-8 md:p-10 space-y-8 shadow-2xl">
+                <div className="text-center mb-10">
+                  <p className="font-montserrat text-[10px] uppercase tracking-[0.3em] text-brand-gold mb-4">
+                    Premium Delivery
+                  </p>
+                  <h2 className="text-3xl md:text-4xl font-cormorant font-medium text-brand-light">
+                    Order <span className="italic text-brand-gray">Online</span>
+                  </h2>
+                  <p className="mt-4 text-sm text-brand-gray font-light leading-relaxed">
+                    Experience {location.name} in the comfort of your home.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
                   <a
                     href={location.doordashUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full px-5 py-3 text-sm font-semibold rounded-lg bg-red-600 text-white hover:bg-red-700 transition-colors"
+                    className="flex justify-between items-center w-full px-6 py-4 border border-[#FF3008]/50 hover:bg-[#FF3008]/10 text-brand-light transition-all duration-300 group"
                   >
-                    Order on DoorDash
+                    <span className="font-montserrat text-xs uppercase tracking-widest group-hover:text-[#FF3008] transition-colors">DoorDash</span>
+                    <span className="text-[#FF3008]">&rarr;</span>
                   </a>
                   <a
                     href={location.uberEatsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 w-full px-5 py-3 text-sm font-semibold rounded-lg bg-green-600 text-white hover:bg-green-700 transition-colors"
+                    className="flex justify-between items-center w-full px-6 py-4 border border-[#06C167]/50 hover:bg-[#06C167]/10 text-brand-light transition-all duration-300 group"
                   >
-                    Order on Uber Eats
+                    <span className="font-montserrat text-xs uppercase tracking-widest group-hover:text-[#06C167] transition-colors">Uber Eats</span>
+                    <span className="text-[#06C167]">&rarr;</span>
                   </a>
                 </div>
 
-                <hr className="border-gray-200" />
-
-                <Button href="/menu" variant="outline" className="w-full">
-                  View Menu
-                </Button>
-                <Button href="/locations" variant="ghost" className="w-full">
-                  Back to All Locations
-                </Button>
+                <div className="pt-8 space-y-4 border-t border-brand-gray/10 mt-8">
+                  <Button href="/menu" variant="primary" className="w-full py-4 text-xs font-montserrat uppercase tracking-[0.2em] rounded-none">
+                    View Tasting Menu
+                  </Button>
+                  <Button href="/locations" variant="outline" className="w-full py-4 text-xs font-montserrat uppercase tracking-[0.2em] rounded-none border-brand-gray/30 text-brand-gray hover:text-brand-light hover:border-brand-gray">
+                    Return to Directory
+                  </Button>
+                </div>
               </div>
             </div>
+
           </div>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

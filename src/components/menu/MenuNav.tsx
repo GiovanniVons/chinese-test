@@ -15,25 +15,27 @@ export default function MenuNav({
     setActive(categoryId);
     const el = document.getElementById(`menu-${categoryId}`);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Offset for sticky header
+      const y = el.getBoundingClientRect().top + window.scrollY - 180;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
   return (
     <nav
-      className="sticky top-16 md:top-20 z-10 bg-white border-b border-gray-200 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+      className="sticky top-[72px] md:top-[88px] z-40 bg-brand-black/95 backdrop-blur-md border-b border-brand-charcoal py-4"
       aria-label="Menu categories"
     >
-      <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide">
+      <div className="flex gap-8 overflow-x-auto scrollbar-hide justify-start md:justify-center px-4 max-w-7xl mx-auto">
         {categories.map((cat) => (
           <button
             key={cat.id}
             onClick={() => handleClick(cat.id)}
             className={cn(
-              "flex-shrink-0 px-4 py-2 text-sm font-medium rounded-full transition-colors",
+              "flex-shrink-0 py-2 text-[10px] md:text-xs font-montserrat uppercase tracking-[0.2em] transition-all duration-300 border-b border-transparent whitespace-nowrap",
               active === cat.id
-                ? "bg-brand-red text-white"
-                : "text-brand-gray hover:bg-brand-red-light hover:text-brand-red"
+                ? "text-brand-gold border-brand-gold"
+                : "text-brand-gray hover:text-brand-light hover:border-brand-gray/50"
             )}
           >
             {cat.name}

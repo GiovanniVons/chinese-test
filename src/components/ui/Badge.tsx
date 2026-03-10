@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
 
 const colorMap: Record<string, string> = {
-  vegetarian: "bg-green-100 text-green-800",
-  spicy: "bg-red-100 text-red-800",
-  "gluten-free": "bg-blue-100 text-blue-800",
-  popular: "bg-amber-100 text-amber-800",
-  new: "bg-purple-100 text-purple-800",
-  default: "bg-gray-100 text-gray-800",
+  vegetarian: "border-green-800 text-green-500",
+  spicy: "border-brand-red text-brand-red",
+  "gluten-free": "border-blue-900 text-blue-400",
+  popular: "border-brand-gold text-brand-gold",
+  new: "border-purple-900 text-purple-400",
+  default: "border-brand-gray/50 text-brand-gray",
 };
 
 export default function Badge({
@@ -19,7 +19,7 @@ export default function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium",
+        "inline-flex items-center rounded-none border px-2.5 py-0.5 text-[10px] tracking-widest uppercase font-medium bg-transparent",
         colorMap[color || label.toLowerCase()] || colorMap.default
       )}
     >

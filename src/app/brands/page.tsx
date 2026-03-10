@@ -16,21 +16,25 @@ export default function BrandsPage() {
   const brands = getBrands();
 
   return (
-    <>
+    <div className="bg-brand-black min-h-screen text-brand-light">
       <PageHeader
         title="Our Brands"
-        subtitle="Four unique dining concepts, one commitment to quality and flavor."
+        subtitle="Four unique dining concepts, one unrelenting commitment to culinary excellence."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Our Brands" }]}
       />
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-20 md:py-32 relative z-10">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {brands.map((brand) => (
-              <BrandCard key={brand.id} brand={brand} />
-            ))}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-x-16 md:gap-y-24">
+              {brands.map((brand, index) => (
+                <div key={brand.id} className={index % 2 === 1 ? "md:mt-24" : ""}>
+                  <BrandCard brand={brand} />
+                </div>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

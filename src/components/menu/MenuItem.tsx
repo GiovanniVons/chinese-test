@@ -3,24 +3,36 @@ import type { MenuItem as MenuItemType } from "@/lib/types";
 
 export default function MenuItem({ item }: { item: MenuItemType }) {
   return (
-    <div className="flex items-start justify-between gap-4 py-3 border-b border-gray-100 last:border-0">
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 flex-wrap">
-          <h4 className="font-semibold text-brand-black text-sm">
-            {item.name}
-          </h4>
-          {item.tags.map((tag) => (
-            <Badge key={tag} label={tag} />
-          ))}
+    <div className="py-4 group">
+      <div className="flex items-baseline justify-between gap-4 mb-2">
+        <h4 className="font-cormorant font-medium text-brand-light text-xl md:text-2xl whitespace-nowrap group-hover:text-brand-gold transition-colors">
+          {item.name}
+        </h4>
+
+        {/* Dotted leader */}
+        <div className="flex-1 border-b-[1.5px] border-dotted border-brand-gray/30 mb-2 md:mb-3 mix-blend-overlay" />
+
+        <div className="flex-shrink-0 text-right whitespace-nowrap">
+          <span className="font-montserrat font-medium text-brand-gold text-sm md:text-base tracking-widest">
+            {item.priceLabel || item.price.toFixed(2)}
+          </span>
         </div>
-        <p className="text-xs text-brand-gray mt-0.5 leading-relaxed">
-          {item.description}
-        </p>
       </div>
-      <div className="flex-shrink-0 text-right">
-        <span className="font-bold text-brand-black text-sm">
-          {item.priceLabel || `$${item.price.toFixed(2)}`}
-        </span>
+
+      <div className="pr-12 md:pr-24">
+        {item.description && (
+          <p className="text-sm font-light text-brand-gray leading-relaxed mb-3">
+            {item.description}
+          </p>
+        )}
+
+        {item.tags && item.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {item.tags.map((tag) => (
+              <Badge key={tag} label={tag} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

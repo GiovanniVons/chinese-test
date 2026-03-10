@@ -6,9 +6,9 @@ import Container from "@/components/ui/Container";
 import LocationsPageClient from "@/components/locations/LocationsPageClient";
 
 export const metadata: Metadata = createMetadata({
-  title: "Find a Location",
+  title: "Reservations & Locations",
   description:
-    "Find a China Star Group restaurant near you. Search 60+ locations by city or ZIP code, and order through DoorDash or Uber Eats.",
+    "Find a China Star Group restaurant near you. Search 60+ locations by city or ZIP code, and secure your dining experience.",
   path: "/locations",
 });
 
@@ -23,13 +23,13 @@ export default async function LocationsPage({
   const states = getUniqueStates();
 
   return (
-    <>
+    <div className="bg-brand-black min-h-screen text-brand-light">
       <PageHeader
         title="Find a Location"
-        subtitle="Search our 60+ locations across the U.S. and order through DoorDash or Uber Eats."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Locations" }]}
+        subtitle="Search our collections across the U.S. and secure your reservation or premium delivery."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Reservations" }]}
       />
-      <section className="py-8 md:py-12 bg-white">
+      <section className="py-12 md:py-20 relative z-10">
         <Container>
           <LocationsPageClient
             locations={locations}
@@ -39,6 +39,6 @@ export default async function LocationsPage({
           />
         </Container>
       </section>
-    </>
+    </div>
   );
 }

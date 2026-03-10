@@ -4,60 +4,72 @@ import { SITE_CONFIG } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-gray-400">
-      <Container className="py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div>
-            <Link href="/" className="inline-block">
-              <span className="font-heading text-xl font-bold text-white">
-                China Star <span className="text-brand-red">Group</span>
+    <footer className="bg-brand-charcoal text-brand-gray border-t border-brand-gold/20">
+      <Container className="py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+
+          {/* Brand - Span 4 cols */}
+          <div className="lg:col-span-4">
+            <Link href="/" className="inline-block group mb-6">
+              <span className="font-cormorant text-2xl md:text-3xl font-medium text-brand-light transition-colors group-hover:text-brand-gold">
+                Yuan Dining
+              </span>
+              <span className="block font-montserrat text-[10px] uppercase tracking-[0.3em] text-brand-gray mt-1">
+                China Star Group
               </span>
             </Link>
-            <p className="mt-3 text-sm leading-relaxed">
+            <p className="font-light leading-relaxed max-w-sm">
               {SITE_CONFIG.description}
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Quick Links
+          {/* Spacer */}
+          <div className="hidden lg:block lg:col-span-2"></div>
+
+          {/* Quick Links - Span 2 cols */}
+          <div className="lg:col-span-2">
+            <h3 className="font-montserrat text-xs font-semibold text-brand-gold uppercase tracking-widest mb-6">
+              Portfolio
             </h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/brands" className="hover:text-white transition-colors">Our Brands</Link></li>
-              <li><Link href="/locations" className="hover:text-white transition-colors">Find a Location</Link></li>
-              <li><Link href="/menu" className="hover:text-white transition-colors">Menu</Link></li>
+            <ul className="space-y-4 font-light text-sm">
+              <li><Link href="/about" className="hover:text-brand-light transition-colors">Our Story</Link></li>
+              <li><Link href="/brands" className="hover:text-brand-light transition-colors">Collections</Link></li>
+              <li><Link href="/locations" className="hover:text-brand-light transition-colors">Reservations</Link></li>
+              <li><Link href="/menu" className="hover:text-brand-light transition-colors">The Menu</Link></li>
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Company
+          {/* Company - Span 2 cols */}
+          <div className="lg:col-span-2">
+            <h3 className="font-montserrat text-xs font-semibold text-brand-gold uppercase tracking-widest mb-6">
+              Corporate
             </h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="/news" className="hover:text-white transition-colors">News</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+            <ul className="space-y-4 font-light text-sm">
+              <li><Link href="/careers" className="hover:text-brand-light transition-colors">Career Atelier</Link></li>
+              <li><Link href="/news" className="hover:text-brand-light transition-colors">Press & News</Link></li>
+              <li><Link href="/contact" className="hover:text-brand-light transition-colors">Inquiries</Link></li>
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Contact
+          {/* Contact - Span 2 cols */}
+          <div className="lg:col-span-2">
+            <h3 className="font-montserrat text-xs font-semibold text-brand-gold uppercase tracking-widest mb-6">
+              Connect
             </h3>
-            <ul className="space-y-2 text-sm">
-              <li>{SITE_CONFIG.email}</li>
-              <li>{SITE_CONFIG.phone}</li>
+            <ul className="space-y-4 font-light text-sm">
+              <li><a href={`mailto:${SITE_CONFIG.email}`} className="hover:text-brand-light transition-colors">{SITE_CONFIG.email}</a></li>
+              <li><a href={`tel:${SITE_CONFIG.phone}`} className="hover:text-brand-light transition-colors">{SITE_CONFIG.phone}</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 text-sm text-center">
-          <p>&copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-brand-gray/10 flex flex-col md:flex-row items-center justify-between gap-4 font-montserrat text-[10px] uppercase tracking-widest text-brand-gray/60">
+          <p>&copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All Rights Reserved.</p>
+          <div className="flex gap-6">
+            <Link href="#" className="hover:text-brand-light transition-colors">Privacy</Link>
+            <Link href="#" className="hover:text-brand-light transition-colors">Terms</Link>
+          </div>
         </div>
       </Container>
     </footer>
